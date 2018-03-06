@@ -92,7 +92,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jPanel3" pref="317" max="32767" attributes="0"/>
+                              <Component id="jPanel3" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -139,6 +139,16 @@
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblSchoolDateEndFixed" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                                  <Component id="lblSchoolDateEnd" pref="78" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblSchoolDateStartFixed" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="lblSchoolDateStart" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblSchoolNameFixed" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
@@ -149,35 +159,26 @@
                                           <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblSchoolName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblSchoolContactEmail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblSchoolContactPhoneNumberOne" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="lblSchoolContactPhoneNumberOne" max="32767" attributes="0"/>
+                                      <Component id="lblSchoolContactEmail" max="32767" attributes="0"/>
+                                      <Component id="lblSchoolName" pref="76" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSchoolDateEndFixed" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                  <Component id="lblSchoolDateEnd" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSchoolDateStartFixed" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="lblSchoolDateStart" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSchoolLocationFixed" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                  <Component id="lblSchoolLocation" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblSchoolPhoneNumberTwoFixed" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblSchoolLocationFixed" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblSchoolPhoneNumberTwoFixed" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="lblSchoolContactNumberTwo" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblSchoolContactNumberTwo" max="32767" attributes="0"/>
+                                      <Component id="lblSchoolLocation" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="542" pref="542" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -203,7 +204,7 @@
                               <Component id="lblSchoolPhoneNumberTwoFixed" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblSchoolContactNumberTwo" alignment="3" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblSchoolLocationFixed" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblSchoolLocation" alignment="3" max="32767" attributes="0"/>

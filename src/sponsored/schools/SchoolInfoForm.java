@@ -7,7 +7,6 @@ package sponsored.schools;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import static sponsored.schools.SponsoredSchools.db;
 
 /**
  *
@@ -15,13 +14,60 @@ import static sponsored.schools.SponsoredSchools.db;
  */
 public class SchoolInfoForm extends javax.swing.JFrame {
 
+    public DBManager db = new DBManager();
+    
+    public SchoolInfoForm( String schoolName ){
+        initComponents();
+        
+        try{
+        School[] school = db.getSchoolSpecific(schoolName);
+        Sponsor[] sponsor = db.getSponsorsSpecific(school[0].getSponsorID());
+        
+        // Display school information
+        lblSchoolName.setText(school[0].getName());
+        lblSchoolContactEmail.setText(school[0].getEmail());
+        lblSchoolContactPhoneNumberOne.setText(school[0].getcNumberOne());
+        lblSchoolContactNumberTwo.setText(school[0].getcNumberTwo());
+        lblSchoolLocation.setText(school[0].getLocation());
+        lblSchoolDateStart.setText(school[0].getDateStart());
+        lblSchoolDateEnd.setText(school[0].getDateEnd());        
+        
+        // Diplay sponsor information
+        lblSponsorName.setText(sponsor[0].getName());
+        lblSponsorContactEmail.setText(sponsor[0].getEmail());
+        lblSponsorContactNumber.setText(sponsor[0].getcNumber());
+        lblSponsorDateStart.setText(sponsor[0].getDateStart());
+        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "School Info Frame Error: " + e);
+            e.printStackTrace();
+        }
+    }
+    
     /**
      * Creates new form SchoolInfoForm
      */
     public SchoolInfoForm() {
         initComponents();
         
+        DBManager db = new DBManager();
         
+        try{
+        School[] schools = db.getSchools();
+        
+        String out = "";
+        
+        for (int i = 0 ; i < schools.length ; i++){
+            if(schools[i]!=null)
+            out += schools[i].toString()+"\n";
+            
+        }
+        
+        JOptionPane.showMessageDialog(this, out);
+        
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Error: " + e);
+        }
     }
 
     /**
@@ -105,6 +151,14 @@ public class SchoolInfoForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblSchoolDateEndFixed)
+                        .addGap(81, 81, 81)
+                        .addComponent(lblSchoolDateEnd, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblSchoolDateStartFixed)
+                        .addGap(60, 60, 60)
+                        .addComponent(lblSchoolDateStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblSchoolNameFixed, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -114,26 +168,18 @@ public class SchoolInfoForm extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSchoolName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSchoolContactPhoneNumberOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSchoolContactEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblSchoolContactPhoneNumberOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lblSchoolName, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lblSchoolDateEndFixed)
-                        .addGap(81, 81, 81)
-                        .addComponent(lblSchoolDateEnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lblSchoolDateStartFixed)
-                        .addGap(60, 60, 60)
-                        .addComponent(lblSchoolDateStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lblSchoolLocationFixed)
-                        .addGap(85, 85, 85)
-                        .addComponent(lblSchoolLocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lblSchoolPhoneNumberTwoFixed)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSchoolLocationFixed)
+                            .addComponent(lblSchoolPhoneNumberTwoFixed))
                         .addGap(31, 31, 31)
-                        .addComponent(lblSchoolContactNumberTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(542, 542, 542))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSchoolContactNumberTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSchoolLocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(90, 90, 90))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +285,7 @@ public class SchoolInfoForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 317, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(349, 349, 349))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblSchoolInformation)

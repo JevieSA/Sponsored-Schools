@@ -37,6 +37,11 @@ public class School {
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
     }
+
+    @Override
+    public String toString() {
+        return "School{" + "id=" + id + ", name=" + name + ", sponsorID=" + sponsorID + ", email=" + email + ", cNumberOne=" + cNumberOne + ", cNumberTwo=" + cNumberTwo + ", location=" + location + ", dateStart=" + dateStart + ", dateEnd=" + dateEnd + '}';
+    }
     
     
     
