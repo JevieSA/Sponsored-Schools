@@ -14,16 +14,13 @@ import javax.swing.JOptionPane;
  */
 public class SponsoredSchools {
 
-    static DBManager db = new DBManager();
-    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        SchoolInfoForm schoolFrame = new SchoolInfoForm();
-        
-        schoolFrame.show();
+        SchoolSelectForm selectForm = new SchoolSelectForm();
+        selectForm.setVisible(true);
     }
     
 }
